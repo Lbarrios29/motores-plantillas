@@ -1,0 +1,34 @@
+    <h1 class="text-center m-3">Vista de productos</h1>
+    <div class="container">
+        {{#if productsExists }}
+            <table class="table table-dark table-sm align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productos}}
+                        <tr>
+                            <td>{{this.nombre}}</td>
+                            <td>{{this.precio}}</td>
+                            <td>
+                                <img src="{{this.url}}" alt="Imagen">
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="bg-secondary">
+                <p class="text-white fs-3 m-3 p-3 text-center">No se encontraron productos</p>
+            </div>
+        {{/if}}
+        <form action="/">
+            <button type="submit" class="btn btn-dark fw-bold">
+                Formulario
+            </button>
+        </form>
+    </div>
